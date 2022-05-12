@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 )
@@ -15,7 +16,7 @@ func main() {
 	log.Printf("Starting server at port :%s", appPort)
 
 	srv := &http.Server{
-		Addr:    appPort,
+		Addr:    fmt.Sprintf(":%s", appPort),
 		Handler: app.routes(),
 	}
 
